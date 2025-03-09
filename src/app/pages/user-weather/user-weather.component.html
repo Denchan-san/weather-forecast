@@ -37,7 +37,7 @@
     </div>
     <button
       class="btn btn-primary center-button"
-      (click)="onSaveToLocalStorage(userWeather.user)"
+      (click)="onSaveToLocalStorage(userWeather.user); $event.stopPropagation()"
     >
       Save
     </button>
