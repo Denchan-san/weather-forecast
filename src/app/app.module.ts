@@ -6,8 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserWeatherModule } from './pages/user-weather/user-weather.module';
 import { SavedUsersModule } from './pages/saved-users/saved-users.module';
 import { NavBarModule } from './pages/nav-bar/nav-bar.module';
-import { AppComponent } from './app.component';
-import { CommonModule } from '@angular/common';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 @NgModule({
   declarations: [
