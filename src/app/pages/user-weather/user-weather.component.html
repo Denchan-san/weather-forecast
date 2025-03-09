@@ -1,0 +1,20 @@
+<div class="container">
+  <div *ngFor="let userWeather of users" class="card">
+    <div class="card-header">
+      <img [src]="userWeather.user.picture" alt="Profile Image" class="profile-image">
+      <h2>{{ userWeather.user.name }}</h2>
+    </div>
+    <div class="card-body">
+      <p><strong>Gender:</strong> {{ userWeather.user.gender }}</p>
+      <p><strong>Location:</strong> {{ userWeather.user.location }}</p>
+      <p><strong>Email:</strong> {{ userWeather.user.email }}</p>
+    </div>
+    <div class="card-footer">
+      <p><strong>Weather:</strong></p>
+      <p><img [src]="getWeatherIcon(+userWeather.weather.icon)" alt="Weather Icon"> {{ userWeather.weather.temperature }}°C</p>
+      <p><strong>Min Temperature:</strong> {{ userWeather.weather.minTemperature }}°C</p>
+      <p><strong>Max Temperature:</strong> {{ userWeather.weather.maxTemperature }}°C</p>
+    </div>
+    <button class="btn btn-primary center-button" (click)="onSaveToLocalStorage(userWeather.user)">Save</button>
+  </div>
+</div>
