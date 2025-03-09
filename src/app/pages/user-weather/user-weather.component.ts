@@ -6,6 +6,8 @@ import { interval, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { icon, latLng, marker, tileLayer, Marker } from 'leaflet';
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MatDialog } from '@angular/material/dialog';
+import { ForecastDialogComponent } from '../forecast-dialog/forecast-dialog.component';
 
 @Component({
   selector: 'app-user-weather',
@@ -26,12 +28,13 @@ export class UserWeatherComponent implements OnInit, OnDestroy {
     zoom: 2,
     center: latLng(0, 0)
   };
-  layers: any[] = []; // Define layers array for leaflet
+  layers: any[] = []; 
 
   constructor(
     private http: HttpClient,
     private cdRef: ChangeDetectorRef,
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -46,6 +49,23 @@ export class UserWeatherComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     if (this.weatherSubscription) {
       this.weatherSubscription.unsubscribe();
+    }
+  }
+
+  onOpenForecastDialog(userWeather: any): void {
+    if (userWeather.weather && userWeather.weather.forecast && userWeather.weather.forecast.time) {
+      const forecast = userWeather.weather.forecast.time.map((time: string, index: number) => ({
+        time,
+        temperature: userWeather.weather.forecast.temperature_2m[index]
+      }));
+    
+  
+      this.dialog.open(ForecastDialogComponent, {
+        width: '400px',
+        data: { userName: userWeather.user.name, forecast }
+      });
+    } else {
+      alert('Hourly weather data is not available');
     }
   }
 
@@ -95,7 +115,6 @@ export class UserWeatherComponent implements OnInit, OnDestroy {
       })
     }).bindPopup(`<b>${user.name}</b><br>${user.location}`);
 
-    // Add the marker to the layers array
     this.layers.push(userMarker);
   }
 

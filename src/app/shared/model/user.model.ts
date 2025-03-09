@@ -14,4 +14,5 @@ export interface Weather {
     minTemperature: number;
     maxTemperature: number;
     hourly?: number[];
+    forecast?: any;
   }

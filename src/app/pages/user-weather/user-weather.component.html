@@ -1,5 +1,9 @@
 <div class="container">
-  <div *ngFor="let userWeather of users" class="card">
+  <div
+    *ngFor="let userWeather of users"
+    class="card"
+    (click)="onOpenForecastDialog(userWeather)"
+  >
     <div class="card-header">
       <img
         [src]="userWeather.user.picture"
@@ -45,5 +49,3 @@
      [leafletOptions]="options"
      [leafletLayers]="layers">
 </div>
-
-

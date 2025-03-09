@@ -2,20 +2,20 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    align-items: stretch; /* Ensure items align at the top */
+    align-items: stretch;
   }
   
   .card {
     display: flex;
-    flex-direction: column; /* Ensure the card content is arranged vertically */
+    flex-direction: column;
     border: 1px solid #ccc;
     border-radius: 8px;
     margin: 16px;
     padding: 16px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
-    flex: 1 1 calc(25% - 32px); /* Adjust width to fit 4 cards in a row */
-    max-width: calc(25% - 32px); /* Adjust width to fit 4 cards in a row */
+    flex: 1 1 calc(25% - 32px);
+    max-width: calc(25% - 32px);
     justify-content: space-between;
   }
   
@@ -51,15 +51,15 @@
   
   @media (max-width: 1200px) {
     .card {
-      flex: 1 1 calc(33.33% - 32px); /* Adjust width to fit 3 cards in a row */
-      max-width: calc(33.33% - 32px); /* Adjust width to fit 3 cards in a row */
+      flex: 1 1 calc(33.33% - 32px); 
+      max-width: calc(33.33% - 32px);
     }
   }
   
   @media (max-width: 768px) {
     .card {
-      flex: 1 1 calc(50% - 32px); /* Adjust width to fit 2 cards in a row */
-      max-width: calc(50% - 32px); /* Adjust width to fit 2 cards in a row */
+      flex: 1 1 calc(50% - 32px); 
+      max-width: calc(50% - 32px);
       margin: 8px;
       padding: 12px;
     }
@@ -78,8 +78,8 @@
   
   @media (max-width: 480px) {
     .card {
-      flex: 1 1 calc(100% - 32px); /* Adjust width to fit 1 card in a row */
-      max-width: calc(100% - 32px); /* Adjust width to fit 1 card in a row */
+      flex: 1 1 calc(100% - 32px);
+      max-width: calc(100% - 32px); 
       margin: 4px;
       padding: 8px;
     }

@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { UserWeatherModule } from './pages/user-weather/user-weather.module';
 import { SavedUsersModule } from './pages/saved-users/saved-users.module';
 import { NavBarModule } from './pages/nav-bar/nav-bar.module';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { ForeCastDialogModule } from './pages/forecast-dialog/forecast-dialog.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
     UserWeatherModule,
     SavedUsersModule,
     NavBarModule,
+    ForeCastDialogModule,
     AppRoutingModule,
     AlertModule.forRoot()
   ],

@@ -38,7 +38,8 @@
           temperature: response.current_weather?.temperature,
           minTemperature: Math.min(...(response.hourly?.temperature_2m || [])),
           maxTemperature: Math.max(...(response.hourly?.temperature_2m || [])),
-          hourly: response.hourly?.temperature_2m || []
+          hourly: response.hourly?.temperature_2m || [],
+          forecast: response.hourly || {}
         };
         return { user, weather };
       })
