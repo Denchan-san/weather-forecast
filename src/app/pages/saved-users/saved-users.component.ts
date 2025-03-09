@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../shared/model/user.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-saved-users',
   templateUrl: './saved-users.component.html',
-  styleUrl: './saved-users.component.css'
+  styleUrl: './saved-users.component.css',
+  imports: [CommonModule]
+
 })
 export class SavedUsersComponent implements OnInit{
 

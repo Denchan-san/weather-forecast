@@ -3,11 +3,13 @@ import { User, Weather } from '../../shared/model/user.model';
 import { HttpClient } from '@angular/common/http';
 import { WeatherService } from '../../shared/services/weather.service';
 import { interval, Subscription } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-user-weather',
   templateUrl: './user-weather.component.html',
   styleUrls: ['./user-weather.component.css'],
+  imports: [CommonModule]
 })
 export class UserWeatherComponent implements OnInit, OnDestroy {
   users: { user: User; weather: Weather }[] = [];

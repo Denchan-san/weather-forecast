@@ -7,11 +7,11 @@ import { HttpClientModule } from '@angular/common/http';
 const routes: Routes = [{ path: '', component: UserWeatherComponent }];
 
 @NgModule({
-  declarations: [UserWeatherComponent],
+  declarations: [],
   imports: [
     HttpClientModule,
     CommonModule, 
     RouterModule.forChild(routes)],
-  exports: [UserWeatherComponent],
+  exports: [],
 })
 export class UserWeatherModule {}

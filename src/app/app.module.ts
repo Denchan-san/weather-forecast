@@ -1,24 +1,28 @@
-import { NgModule } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { RouterModule } from "@angular/router";
-import { AppRoutingModule } from "./app-routing.module";
-import { UserWeatherModule } from "./pages/user-weather/user-weather.module";
-import { CommonModule } from "@angular/common";
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { AppRoutingModule } from './app-routing.module';
+import { UserWeatherModule } from './pages/user-weather/user-weather.module';
+import { SavedUsersModule } from './pages/saved-users/saved-users.module';
+import { NavBarModule } from './pages/nav-bar/nav-bar.module';
+import { AppComponent } from './app.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
+    
   ],
   imports: [
+    BrowserModule,
     HttpClientModule,
     UserWeatherModule,
+    SavedUsersModule,
+    NavBarModule,
     AppRoutingModule,
-    BrowserModule,
-    RouterModule,
-    CommonModule,
     AlertModule.forRoot()
   ],
   providers: [],
+  bootstrap: []
 })
 export class AppModule { }

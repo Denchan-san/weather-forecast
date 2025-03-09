@@ -9,13 +9,13 @@ const routes: Routes = [{ path: '', component: SavedUsersComponent }];
 
 @NgModule({
   declarations: [
-    SavedUsersComponent
+    
   ],
   imports: [
     HttpClientModule,
     CommonModule,
     RouterModule.forChild(routes)
     ],
-    exports: [SavedUsersComponent]
+    exports: []
 })
 export class SavedUsersModule { }
