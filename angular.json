@@ -67,7 +67,7 @@
         },
         "serve": {
           "options": {"allowedHosts": [
-              "4130-178-158-192-199.ngrok-free.app",  
+              "662e-178-158-192-199.ngrok-free.app",  
               "localhost",                            
               "0.0.0.0" 
               ]},
